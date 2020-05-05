@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.dprabhu.committer.Committer;
+import com.dprabhu.committer.CoolSpecsCommitter;
 import com.dprabhu.committer.RandomCommitter;
 
 public class CommitterFactory {
@@ -12,6 +13,7 @@ public class CommitterFactory {
 
   static {
     committerMap.put("random", new RandomCommitter());
+    committerMap.put("cool", new CoolSpecsCommitter());
   }
 
   public static Optional<Committer> getCommitter(String committerType) {

@@ -34,7 +34,7 @@ public class GitHelper {
 
   public void gitPush(){
     try {
-      CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider(GIT_USER_NAME, GIT_PASSWORD);
+      CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider("", "");
       git.push().setCredentialsProvider(credentialsProvider).call();
     } catch(GitAPIException gitAPIException){
       System.out.println("Git push failed!!!");
