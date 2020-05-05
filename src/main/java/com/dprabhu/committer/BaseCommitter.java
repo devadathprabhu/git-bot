@@ -13,7 +13,7 @@ public abstract class BaseCommitter {
   GitHelper gitHelper = new GitHelper();
   FileHelper fileHelper = new FileHelper();
 
-  public void commit(LocalDate startDate, long weeksToAdd, long daysToAdd) {
+  protected void commit(LocalDate startDate, long weeksToAdd, long daysToAdd) {
     try {
       LocalDate commitLocalDate = startDate.plusWeeks(weeksToAdd).plusDays(daysToAdd);
       if(commitLocalDate.isAfter(LocalDate.now())){
@@ -35,11 +35,11 @@ public abstract class BaseCommitter {
 
   }
 
-  public void push(){
+  protected void push(){
     gitHelper.gitPush();
   }
 
-  protected int getRandomInteger(int upperBound) {
+  protected int getRandomInt(int upperBound) {
     Random random = new Random();
     return random.nextInt(upperBound);
   }
