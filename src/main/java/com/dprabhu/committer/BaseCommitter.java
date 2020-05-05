@@ -1,47 +1,46 @@
 package com.dprabhu.committer;
 
-import static com.dprabhu.constants.GitBotConstants.PATH_TO_RESOURCE;
-
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Random;
 
-import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.lib.PersonIdent;
-import org.eclipse.jgit.transport.CredentialsProvider;
-import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
-
+import com.dprabhu.helpers.FileHelper;
 import com.dprabhu.helpers.GitHelper;
-import com.dprabhu.model.GitRepo;
 
 public abstract class BaseCommitter {
 
   GitHelper gitHelper = new GitHelper();
+  FileHelper fileHelper = new FileHelper();
 
-  public void commit(LocalDate startDate, long weeksToAdd, long daysToAdd) throws IOException {
+  public void commit(LocalDate startDate, long weeksToAdd, long daysToAdd) {
     try {
-      Git git = GitRepo.getGitRepo().getRepo();
-      LocalDate commitDate = startDate.plusWeeks(weeksToAdd).plusDays(daysToAdd);
-      if(commitDate.isAfter(LocalDate.now())){
-        System.out.println("Commit date " + commitDate.toString() + " is future date!");
+      LocalDate commitLocalDate = startDate.plusWeeks(weeksToAdd).plusDays(daysToAdd);
+      if(commitLocalDate.isAfter(LocalDate.now())){
+        System.out.println("Commit date " + commitLocalDate.toString() + " is future date!");
         System.out.print("Commit skipped for startDate: " + startDate);
         System.out.println(" week: " + weeksToAdd + " day: " + daysToAdd);
       }
       else {
-        Date date = Date.from(commitDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date commitDate = Date.from(commitLocalDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 
-//        gitHelper.gitCommit(date);
-        PersonIdent defaultCommitter = new PersonIdent(git.getRepository());
-        PersonIdent committer = new PersonIdent(defaultCommitter, date);
-        git.add().addFilepattern(PATH_TO_RESOURCE).call();
-        git.commit().setMessage("Test commit from code!").setCommitter(committer).call();
-        CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider("", "");
-        git.push().setCredentialsProvider(credentialsProvider).call();
+        fileHelper.createFileForCommit(commitDate);
+
+        gitHelper.gitCommit(commitDate);
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
       e.printStackTrace();
     }
+
+  }
+
+  public void push(){
+    gitHelper.gitPush();
+  }
+
+  protected int getRandomInteger(int upperBound) {
+    Random random = new Random();
+    return random.nextInt(upperBound);
   }
 }

@@ -1,18 +1,17 @@
 package com.dprabhu.committer;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
 public class RandomCommitter extends BaseCommitter implements Committer {
 
   @Override
   public void commitInShape() {
-    try {
-      LocalDate localDate = LocalDate.now();
-      commit(localDate, 3, 4);
-    }
-    catch (IOException ioException){
 
+    LocalDate localDate = LocalDate.of(2014, 01, 02);
+
+    for(int i=0; i<500; i++){
+      commit(localDate, getRandomInteger(52), getRandomInteger(7));
     }
+    push();
   }
 }
