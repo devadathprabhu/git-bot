@@ -24,7 +24,7 @@ public abstract class BaseCommitter {
         System.out.println(" week: " + weeksToAdd + " day: " + daysToAdd);
       }
       else {
-        Date commitDate = Date.from(commitLocalDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date commitDate = Date.from(commitLocalDate.atStartOfDay(ZoneId.systemDefault()).toInstant().plusSeconds(10000));
         fileHelper.createFileForCommit(commitDate);
         gitHelper.gitCommit(commitDate);
       }

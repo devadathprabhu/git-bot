@@ -1,8 +1,6 @@
 package com.dprabhu.helpers;
 
 import static com.dprabhu.constants.GitBotConstants.COMMIT_MSG;
-import static com.dprabhu.constants.GitBotConstants.GIT_PASSWORD;
-import static com.dprabhu.constants.GitBotConstants.GIT_USER_NAME;
 import static com.dprabhu.constants.GitBotConstants.PATH_TO_RESOURCE;
 
 import java.util.Date;
@@ -22,7 +20,6 @@ public class GitHelper {
   public void gitCommit(Date date){
 
     try {
-//      date.setHours(3);
       PersonIdent defaultCommitter = new PersonIdent(git.getRepository());
       PersonIdent committer = new PersonIdent(defaultCommitter, date);
       git.add().addFilepattern(PATH_TO_RESOURCE).call();
