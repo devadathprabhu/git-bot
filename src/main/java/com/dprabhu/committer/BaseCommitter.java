@@ -16,7 +16,6 @@ public abstract class BaseCommitter {
   protected void commit(LocalDate startDate, long weeksToAdd, long daysToAdd) {
     try {
       LocalDate commitLocalDate = startDate.plusWeeks(weeksToAdd).plusDays(daysToAdd);
-      System.out.println("---- Changed date: " + commitLocalDate.toString());
 
       if(commitLocalDate.isAfter(LocalDate.now())){
         System.out.println("Commit date " + commitLocalDate.toString() + " is future date!");

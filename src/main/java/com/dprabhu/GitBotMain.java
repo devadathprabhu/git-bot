@@ -20,12 +20,13 @@ public class GitBotMain {
     System.out.println("1. Random");
     System.out.println("2. Cool specs");
     System.out.println("3. Devadath");
+    System.out.println("4. Crab");
     System.out.print("Your selection: ");
 
     Scanner scanner = new Scanner(System.in);
     int option = scanner.nextInt();
 
-    System.out.print("Enter the start date from where the pattern has to be drawn on git"
+    System.out.print("Enter the start date from where the pattern has to be drawn on git \n"
         + "contribution graph in the format (year month day):"
         + "(Example: 2020 01 01) : ");
 
@@ -58,6 +59,7 @@ public class GitBotMain {
       case 1 : type = "random"; break;
       case 2 : type = "cool"; break;
       case 3 : type = "devadath"; break;
+      case 4 : type = "crab"; break;
       default: break;
     }
 
