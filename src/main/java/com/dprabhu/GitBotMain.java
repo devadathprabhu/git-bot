@@ -34,6 +34,7 @@ public class GitBotMain {
     int day = scanner.nextInt();
 
     LocalDate localDate = LocalDate.of(year, month, day);
+    localDate.atTime(4, 10);
 
     System.out.println("Enter the number of commits to be made for each pixel: "
         + "NOTE: Higher the commits, darker the pixel!");

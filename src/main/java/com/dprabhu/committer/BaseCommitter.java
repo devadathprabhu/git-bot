@@ -16,6 +16,8 @@ public abstract class BaseCommitter {
   protected void commit(LocalDate startDate, long weeksToAdd, long daysToAdd) {
     try {
       LocalDate commitLocalDate = startDate.plusWeeks(weeksToAdd).plusDays(daysToAdd);
+      System.out.println("---- Changed date: " + commitLocalDate.toString());
+
       if(commitLocalDate.isAfter(LocalDate.now())){
         System.out.println("Commit date " + commitLocalDate.toString() + " is future date!");
         System.out.print("Commit skipped for startDate: " + startDate);
@@ -23,9 +25,7 @@ public abstract class BaseCommitter {
       }
       else {
         Date commitDate = Date.from(commitLocalDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-
         fileHelper.createFileForCommit(commitDate);
-
         gitHelper.gitCommit(commitDate);
       }
     } catch (Exception e) {
@@ -53,14 +53,12 @@ public abstract class BaseCommitter {
     commit(localDate, 2, 3);
     commit(localDate, 3, 1);
     commit(localDate, 3, 3);
-    commit(localDate, 4, 1);
+    commit(localDate, 4, 2);
     commit(localDate, 4, 3);
-    commit(localDate, 5, 2);
-    commit(localDate, 5, 3);
-    commit(localDate, 5, 4);
-    commit(localDate, 5, 5);
+    commit(localDate, 4, 4);
+    commit(localDate, 4, 5);
 
-    return localDate.plusWeeks(6);
+    return localDate.plusWeeks(5);
   }
 
   protected LocalDate drawD(LocalDate localDate){
@@ -90,15 +88,13 @@ public abstract class BaseCommitter {
     commit(localDate, 2, 3);
     commit(localDate, 2, 5);
     commit(localDate, 3, 1);
-    commit(localDate, 3, 3);
     commit(localDate, 3, 5);
-    commit(localDate, 4, 1);
-    commit(localDate, 4, 5);
 
-    return localDate.plusWeeks(5);
+    return localDate.plusWeeks(4);
   }
 
   protected LocalDate drawV(LocalDate localDate){
+    System.out.println("Called V!");
     commit(localDate, 1, 1);
     commit(localDate, 1, 2);
     commit(localDate, 2, 3);
@@ -115,15 +111,13 @@ public abstract class BaseCommitter {
   protected LocalDate drawT(LocalDate localDate){
     commit(localDate, 1, 1);
     commit(localDate, 2, 1);
+    commit(localDate, 2, 2);
+    commit(localDate, 2, 3);
+    commit(localDate, 2, 4);
+    commit(localDate, 2, 5);
     commit(localDate, 3, 1);
-    commit(localDate, 3, 2);
-    commit(localDate, 3, 3);
-    commit(localDate, 3, 4);
-    commit(localDate, 3, 5);
-    commit(localDate, 4, 1);
-    commit(localDate, 5, 1);
 
-    return localDate.plusWeeks(6);
+    return localDate.plusWeeks(4);
   }
 
   protected LocalDate drawH(LocalDate localDate){
@@ -134,13 +128,12 @@ public abstract class BaseCommitter {
     commit(localDate, 1, 5);
     commit(localDate, 2, 3);
     commit(localDate, 3, 3);
+    commit(localDate, 4, 1);
+    commit(localDate, 4, 2);
     commit(localDate, 4, 3);
-    commit(localDate, 5, 1);
-    commit(localDate, 5, 2);
-    commit(localDate, 5, 3);
-    commit(localDate, 5, 4);
-    commit(localDate, 5, 5);
+    commit(localDate, 4, 4);
+    commit(localDate, 4, 5);
 
-    return localDate.plusWeeks(6);
+    return localDate.plusWeeks(5);
   }
 }
