@@ -43,4 +43,104 @@ public abstract class BaseCommitter {
     Random random = new Random();
     return random.nextInt(upperBound);
   }
+
+  protected LocalDate drawA(LocalDate localDate){
+    commit(localDate, 1, 2);
+    commit(localDate, 1, 3);
+    commit(localDate, 1, 4);
+    commit(localDate, 1, 5);
+    commit(localDate, 2, 1);
+    commit(localDate, 2, 3);
+    commit(localDate, 3, 1);
+    commit(localDate, 3, 3);
+    commit(localDate, 4, 1);
+    commit(localDate, 4, 3);
+    commit(localDate, 5, 2);
+    commit(localDate, 5, 3);
+    commit(localDate, 5, 4);
+    commit(localDate, 5, 5);
+
+    return localDate.plusWeeks(6);
+  }
+
+  protected LocalDate drawD(LocalDate localDate){
+    commit(localDate, 1, 1);
+    commit(localDate, 1, 2);
+    commit(localDate, 1, 3);
+    commit(localDate, 1, 4);
+    commit(localDate, 1, 5);
+    commit(localDate, 2, 1);
+    commit(localDate, 2, 5);
+    commit(localDate, 3, 1);
+    commit(localDate, 3, 5);
+    commit(localDate, 4, 2);
+    commit(localDate, 4, 3);
+    commit(localDate, 4, 4);
+
+    return localDate.plusWeeks(5);
+  }
+
+  protected LocalDate drawE(LocalDate localDate){
+    commit(localDate, 1, 1);
+    commit(localDate, 1, 2);
+    commit(localDate, 1, 3);
+    commit(localDate, 1, 4);
+    commit(localDate, 1, 5);
+    commit(localDate, 2, 1);
+    commit(localDate, 2, 3);
+    commit(localDate, 2, 5);
+    commit(localDate, 3, 1);
+    commit(localDate, 3, 3);
+    commit(localDate, 3, 5);
+    commit(localDate, 4, 1);
+    commit(localDate, 4, 5);
+
+    return localDate.plusWeeks(5);
+  }
+
+  protected LocalDate drawV(LocalDate localDate){
+    commit(localDate, 1, 1);
+    commit(localDate, 1, 2);
+    commit(localDate, 2, 3);
+    commit(localDate, 2, 4);
+    commit(localDate, 3, 5);
+    commit(localDate, 4, 3);
+    commit(localDate, 4, 4);
+    commit(localDate, 5, 1);
+    commit(localDate, 5, 2);
+
+    return localDate.plusWeeks(6);
+  }
+
+  protected LocalDate drawT(LocalDate localDate){
+    commit(localDate, 1, 1);
+    commit(localDate, 2, 1);
+    commit(localDate, 3, 1);
+    commit(localDate, 3, 2);
+    commit(localDate, 3, 3);
+    commit(localDate, 3, 4);
+    commit(localDate, 3, 5);
+    commit(localDate, 4, 1);
+    commit(localDate, 5, 1);
+
+    return localDate.plusWeeks(6);
+  }
+
+  protected LocalDate drawH(LocalDate localDate){
+    commit(localDate, 1, 1);
+    commit(localDate, 1, 2);
+    commit(localDate, 1, 3);
+    commit(localDate, 1, 4);
+    commit(localDate, 1, 5);
+    commit(localDate, 2, 3);
+    commit(localDate, 3, 3);
+    commit(localDate, 4, 3);
+    commit(localDate, 5, 1);
+    commit(localDate, 5, 2);
+    commit(localDate, 5, 3);
+    commit(localDate, 5, 4);
+    commit(localDate, 5, 5);
+
+    return localDate.plusWeeks(6);
+  }
 }

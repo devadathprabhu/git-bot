@@ -19,6 +19,7 @@ public class GitBotMain {
     System.out.println("Select the pattern to be drawn on your git contribution graph:");
     System.out.println("1. Random");
     System.out.println("2. Cool specs");
+    System.out.println("3. Devadath");
     System.out.print("Your selection: ");
 
     Scanner scanner = new Scanner(System.in);
@@ -56,6 +57,7 @@ public class GitBotMain {
     switch (option){
       case 1 : type = "random"; break;
       case 2 : type = "cool"; break;
+      case 3 : type = "devadath"; break;
       default: break;
     }
 
