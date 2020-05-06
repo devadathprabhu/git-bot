@@ -21,6 +21,8 @@ public class GitBotMain {
     System.out.println("2. Cool specs");
     System.out.println("3. Devadath");
     System.out.println("4. Crab");
+    System.out.println("5. ECG");
+
     System.out.print("Your selection: ");
 
     Scanner scanner = new Scanner(System.in);
@@ -60,6 +62,7 @@ public class GitBotMain {
       case 2 : type = "cool"; break;
       case 3 : type = "devadath"; break;
       case 4 : type = "crab"; break;
+      case 5 : type = "ecg"; break;
       default: break;
     }
 
