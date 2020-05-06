@@ -22,6 +22,7 @@ public class GitBotMain {
     System.out.println("3. Devadath");
     System.out.println("4. Crab");
     System.out.println("5. ECG");
+    System.out.println("6. Hello! with shades");
 
     System.out.print("Your selection: ");
 
@@ -63,6 +64,7 @@ public class GitBotMain {
       case 3 : type = "devadath"; break;
       case 4 : type = "crab"; break;
       case 5 : type = "ecg"; break;
+      case 6 : type = "helloshades"; break;
       default: break;
     }
 

@@ -9,6 +9,7 @@ import com.dprabhu.committer.CoolSpecsCommitter;
 import com.dprabhu.committer.CrabCommitter;
 import com.dprabhu.committer.DevadathCommitter;
 import com.dprabhu.committer.ECGCommitter;
+import com.dprabhu.committer.HelloWithShadesCommitter;
 import com.dprabhu.committer.RandomCommitter;
 
 public class CommitterFactory {
@@ -20,6 +21,7 @@ public class CommitterFactory {
     committerMap.put("devadath", new DevadathCommitter());
     committerMap.put("crab", new CrabCommitter());
     committerMap.put("ecg", new ECGCommitter());
+    committerMap.put("helloshades", new HelloWithShadesCommitter());
   }
 
   public static Optional<Committer> getCommitter(String committerType) {
