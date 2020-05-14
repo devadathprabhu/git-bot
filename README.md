@@ -6,7 +6,8 @@ Draw patterns like specs, ecg, crab or write characters or just screw up the con
 Some sample patterns:
 <br>
 <br>
-Let's start with my _name_ !
+
+Let's start with my _name_!
 
 ![Alt text](src/main/resources/Results/Dev.PNG?raw=true "Devadath")
 
@@ -34,4 +35,5 @@ Steps to run the project:
 - Enjoy!
 <br>
 <br>
+
 Do you have more ideas? Feel free to contribute or contact me at: _dev.kts.31@gmail.com_  :)
