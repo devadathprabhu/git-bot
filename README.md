@@ -1,13 +1,13 @@
 ### **Git-bot** to spice up the GitHub contribution graph!
 <br>
-<br>
 Draw patterns like specs, ecg, crab or write characters or just screw up the contribution timeline, and more importantly have fun!
 <br>
 <br>
 Some sample patterns:
 <br>
 <br>
-Let's start with my _name_! <br>
+Let's start with my _name_ !
+
 ![Alt text](src/main/resources/Results/Dev.PNG?raw=true "Devadath")
 
 My _heart beat_ while merging the PR: <br>
