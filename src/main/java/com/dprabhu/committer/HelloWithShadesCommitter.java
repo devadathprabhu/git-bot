@@ -7,6 +7,7 @@ public class HelloWithShadesCommitter extends BaseCommitter implements Committer
   @Override
   public void commitInShape(LocalDate localDate, int noOfCommits) {
 
+    System.out.println("Starting dark shades!!");
     for(int i=0; i<80; i++){
       // Part of h
       commit(localDate, 1, 2);
@@ -48,7 +49,12 @@ public class HelloWithShadesCommitter extends BaseCommitter implements Committer
       commit(localDate, 17, 2);
       commit(localDate, 17, 6);
 
+      push();
+
     }
+
+
+    System.out.println("Starting medium shades!!");
 
     for(int i=0; i<45; i++){
 
@@ -77,7 +83,12 @@ public class HelloWithShadesCommitter extends BaseCommitter implements Committer
       // Part of !
       commit(localDate, 17, 3);
 
+      push();
+
     }
+
+
+    System.out.println("Starting light shades!!");
 
     for(int i=0; i<20; i++){
       // Part of h
@@ -109,8 +120,9 @@ public class HelloWithShadesCommitter extends BaseCommitter implements Committer
       // Part of !
       commit(localDate, 17, 4);
 
+      push();
+
     }
-    push();
   }
 
 }
